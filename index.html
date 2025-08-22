@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda de Videojuegos | GamePlanet</title>
+  <meta name="description" content="Tienda de videojuegos con ofertas, catálogo y contacto." />
+
+  <!-- Bootstrap 5.3 CSS desde CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Bootstrap Icons (opcional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    /* Estilos mínimos propios (puedes moverlos a styles.css si prefieres) */
+    :root {
+      --brand: #6c5ce7;
+    }
+    .navbar-brand strong { color: var(--brand); }
+    .hero {
+      background: radial-gradient( circle at 20% 20%, rgba(108,92,231,.25), transparent 40%),
+                  radial-gradient( circle at 80% 0%, rgba(0,255,255,.15), transparent 35%),
+                  #0f172a;
+      color: #e2e8f0;
+    }
+    .hero .btn-primary { background-color: var(--brand); border-color: var(--brand); }
+    .badge-new { background: linear-gradient(45deg, #ff6b6b, #feca57); }
+    .category-chip { border: 1px solid #e2e8f0; border-radius: 999px; padding: .25rem .6rem; font-size: .85rem; }
+    .footer a { text-decoration: none; }
+    /* Ejemplo de imagen responsiva adicional */
+    .cover-img { object-fit: cover; height: 320px; }
+    @media (min-width: 768px) {
+      .cover-img { height: 380px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-controller"></i>
+        <span><strong>Game</strong>Planet</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+        <a class="btn btn-outline-primary ms-lg-3" href="#catalogo"><i class="bi bi-cart"></i> Ver Carrito</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / CAROUSEL DESTACADOS -->
+  <header id="inicio" class="hero py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-6">
+          <h1 class="display-5 fw-bold">Tu próxima aventura comienza aquí 🎮</h1>
+          <p class="lead mt-3">Explora nuevos lanzamientos, clásicos imperdibles y ofertas exclusivas para todas las plataformas.</p>
+          <div class="d-flex gap-3 mt-4">
+            <a class="btn btn-primary btn-lg" href="#catalogo">Explorar catálogo</a>
+            <a class="btn btn-outline-light btn-lg" href="#ofertas">Ver ofertas</a>
+          </div>
+          <div class="mt-4 d-flex flex-wrap gap-2">
+            <span class="category-chip">PlayStation</span>
+            <span class="category-chip">Xbox</span>
+            <span class="category-chip">Nintendo</span>
+            <span class="category-chip">PC</span>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <!-- Carousel de juegos destacados -->
+          <div id="carouselDestacados" class="carousel slide shadow rounded overflow-hidden">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <!-- REEMPLAZA src por rutas locales en /img o URLs absolutas -->
+              <div class="carousel-item active">
+                <img class="d-block w-100 cover-img" src="https://es.dragon-ball-official.com/dragonball/jp/news/2023/03/u2303061745-2.jpg?_=1754895900" alt="Juego destacado 1" />
+                <div class="carousel-caption text-start">
+                  <span class="badge badge-new">Nuevo</span>
+                  <h5 class="mt-2">DRAGON BALL KAKAROT</h5>
+                  <p>Acción espacial en 4K y 60 FPS</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100 cover-img" src="https://cdn.motor1.com/images/mgl/L3XykR/s1/mario-kart-world.jpg" alt="Juego destacado 2" />
+                <div class="carousel-caption">
+                  <h5>MARIO KART</h5>
+                  <p>Compite con amigos, pistas locas</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100 cover-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLKSeTj8qF1Ns1ZOeFsR_Joua0dmUq6-HAYA&s" alt="Juego destacado 3" />
+                <div class="carousel-caption text-end">
+                  <h5>SONIC</h5>
+                  <p>Explora, sube de nivel y vence jefes</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacados" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacados" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN CATÁLOGO -->
+  <section id="catalogo" class="py-5">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="h3 m-0">Catálogo</h2>
+        <div class="input-group w-auto">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input class="form-control" type="search" placeholder="Buscar juegos…" aria-label="Buscar" />
+        </div>
+      </div>
+
+      <!-- Grid responsivo de tarjetas -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <!-- CARD 1 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="img/juego1.jpg" class="card-img-top img-fluid" alt="Portada Neo City" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Neo City</h5>
+              <p class="text-muted small mb-2">PS5 • Acción</p>
+              <p class="card-text">Disfruta combates vertiginosos y una historia cyberpunk.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <span class="fw-bold h5 mb-0">$49.990</span>
+                <div class="btn-group">
+                  <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalJuego1">Ver más</button>
+                  <button class="btn btn-sm btn-primary"><i class="bi bi-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="img/juego2.jpg" class="card-img-top img-fluid" alt="Portada Wild Tracks" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Wild Tracks</h5>
+              <p class="text-muted small mb-2">Nintendo • Carreras</p>
+              <p class="card-text">Derrota a tus rivales con atajos y objetos especiales.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <span class="fw-bold h5 mb-0">$39.990</span>
+                <div class="btn-group">
+                  <button class="btn btn-sm btn-outline-primary">Ver más</button>
+                  <button class="btn btn-sm btn-primary"><i class="bi bi-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="img/juego3.jpg" class="card-img-top img-fluid" alt="Portada Star Colony" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Star Colony</h5>
+              <p class="text-muted small mb-2">Xbox • Estrategia</p>
+              <p class="card-text">Construye tu base y conquista el sistema solar.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <span class="fw-bold h5 mb-0">$44.990</span>
+                <div class="btn-group">
+                  <button class="btn btn-sm btn-outline-primary">Ver más</button>
+                  <button class="btn btn-sm btn-primary"><i class="bi bi-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="img/juego4.jpg" class="card-img-top img-fluid" alt="Portada Mystic Woods" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Mystic Woods</h5>
+              <p class="text-muted small mb-2">PC • RPG</p>
+              <p class="card-text">Explora un mundo abierto lleno de magia y secretos.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <span class="fw-bold h5 mb-0">$34.990</span>
+                <div class="btn-group">
+                  <button class="btn btn-sm btn-outline-primary">Ver más</button>
+                  <button class="btn btn-sm btn-primary"><i class="bi bi-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal de ejemplo (detalles de un juego) -->
+      <div class="modal fade" id="modalJuego1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Neo City — Detalles</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <picture>
+                <!-- Puedes cambiar fuentes según ancho -->
+                <source srcset="img/juego1_small.jpg" media="(max-width: 600px)">
+                <img src="img/juego1.jpg" class="img-fluid rounded mb-3" alt="Portada Neo City" />
+              </picture>
+              <p>Sumérgete en una metrópolis futurista donde cada elección cuenta.</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Resolución: 4K HDR</li>
+                <li class="list-group-item">Modo online cooperativo</li>
+                <li class="list-group-item">Audio 3D y doblaje en español</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button class="btn btn-primary"><i class="bi bi-cart-plus"></i> Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN OFERTAS -->
+  <section id="ofertas" class="py-5 bg-light border-top border-bottom">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="h3 m-0">Ofertas</h2>
+        <a href="#" class="link-primary">Ver todas</a>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <div class="p-4 rounded-3 bg-white shadow-sm d-flex align-items-center">
+            <div class="me-3">
+              <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1971870/header.jpg?t=1750176505" class="img-fluid rounded" style="width:140px; height: 100px; object-fit: cover;" alt="Oferta 1" />
+            </div>
+            <div class="flex-grow-1">
+              <h5 class="mb-1">MORTAL KOMBAT 11 + DLC</h5>
+              <p class="mb-2 text-muted">Antes $59.990</p>
+              <div class="d-flex align-items-center gap-3">
+                <span class="h5 mb-0 text-success">$39.990</span>
+                <button class="btn btn-sm btn-outline-success"><i class="bi bi-cart-plus"></i> Añadir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="p-4 rounded-3 bg-white shadow-sm d-flex align-items-center">
+            <div class="me-3">
+              <img src="img/oferta2.jpg" class="img-fluid rounded" style="width:140px; height: 100px; object-fit: cover;" alt="Oferta 2" />
+            </div>
+            <div class="flex-grow-1">
+              <h5 class="mb-1">Indie Pack — 3×2</h5>
+              <p class="mb-2 text-muted">Llévate 3 y paga 2</p>
+              <div class="d-flex align-items-center gap-3">
+                <span class="h5 mb-0 text-success">$24.990</span>
+                <button class="btn btn-sm btn-outline-success"><i class="bi bi-cart-plus"></i> Añadir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <h2 class="h3">Contáctanos</h2>
+          <p class="text-muted">¿Dudas sobre stock o envíos? Escríbenos y te respondemos.</p>
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input id="nombre" class="form-control" placeholder="Tu nombre" required />
+                <div class="invalid-feedback">Ingresa tu nombre.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" type="email" class="form-control" placeholder="tucorreo@ejemplo.com" required />
+                <div class="invalid-feedback">Ingresa un correo válido.</div>
+              </div>
+              <div class="col-12">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea id="mensaje" class="form-control" rows="4" placeholder="Cuéntanos en qué te ayudamos" required></textarea>
+                <div class="invalid-feedback">Escribe un mensaje.</div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit"><i class="bi bi-send"></i> Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-12 col-lg-6">
+          <h2 class="h3">Ubicación</h2>
+          <p class="text-muted">Ejemplo: Av. Los Videojuegos 1234, Santiago, Chile</p>
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+            <!-- Reemplaza por un mapa embebido si quieres -->
+            <img src="img/mapa_demo.jpg" alt="Mapa" class="img-fluid">
+          </div>
+          <ul class="list-unstyled mt-3">
+            <li><i class="bi bi-telephone"></i> +56 9 1234 5678</li>
+            <li><i class="bi bi-envelope"></i> contacto@gameplanet.cl</li>
+            <li><i class="bi bi-clock"></i> Lun a Vie: 10:00–19:00</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer py-4 bg-body-tertiary border-top small">
+    <div class="container d-flex flex-column flex-md-row gap-3 justify-content-between align-items-center">
+      <p class="m-0">© <span id="year"></span> GamePlanet — Todos los derechos reservados.</p>
+      <div class="d-flex gap-3">
+        <a class="text-body" href="#"><i class="bi bi-facebook"></i> Facebook</a>
+        <a class="text-body" href="#"><i class="bi bi-instagram"></i> Instagram</a>
+        <a class="text-body" href="#"><i class="bi bi-tiktok"></i> TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 Bundle con Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    // Validación de formulario de ejemplo (Bootstrap)
+    (() => {
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+    // Año dinámico en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
