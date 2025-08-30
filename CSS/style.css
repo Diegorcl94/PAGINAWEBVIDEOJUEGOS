@@ -53,3 +53,22 @@
   color: #ffffff;                      /* Blanco */
   text-shadow: 0 0 4px #000;           /* Sombra para visibilidad */
 }
+
+/* 🎥 Video de fondo */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 1; /* siempre detrás del login */
+}
+
+/* Caja del formulario encima del video */
+.form-signin {
+  background: rgba(0, 0, 0, 0.65); /* negro con transparencia */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
