@@ -55,20 +55,32 @@
 }
 
 /* 🎥 Video de fondo */
-#bg-video {
+/* Asegura que ocupe toda la ventana */
+html, body { height: 100%; }
+
+/* 🎥 Video de fondo a pantalla completa */
+#bg-video{
   position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  inset: 0;               /* top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: 1; /* siempre detrás del login */
+  z-index: 0;             /* detrás del login */
 }
 
 /* Caja del formulario encima del video */
-.form-signin {
-  background: rgba(0, 0, 0, 0.65); /* negro con transparencia */
+.form-signin{
+  position: relative;
+  z-index: 2;
+  max-width: 380px;
+  background: rgba(0,0,0,0.65);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
+  margin: 0 auto;         /* centrado horizontal */
+  top: 10vh;              /* separación desde arriba */
 }
+
+/* Si en el body tenías un fondo, lo anulamos para que no tape el video */
+body.bg-dark{ background: transparent !important; }
+
